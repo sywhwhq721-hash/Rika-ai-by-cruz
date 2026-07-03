@@ -8,7 +8,7 @@ try:
 except (TypeError, AttributeError):
     INSTANCE_ID = "local_instance"
 
-MONGO_URI = "mongodb+srv://pabitrabarman0002:rajrajkumar02@rajrajkumar.rrwa7zy.mongodb.net/?retryWrites=true&w=majority&appName=Rajrajkumar"
+MONGO_URI = "mongodb+srv://Lucifer:<Lucky1976208>@cluster0.9lfbgac.mongodb.net/?appName=Cluster0"
 
 GROQ_API_KEYS = [
     "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",
@@ -19,8 +19,12 @@ GROQ_API_KEYS = [
 
 GROQ_MODEL = "llama-3.1-8b-instant"
 
-LOG_CHAT_ID = -1003723055654
-OWNER_ID = 7572263943
+LOG_CHAT_ID = -1004315457394
+OWNER_ID = 8705127026
+
+# Channel configurations
+UPDATE_CHANNEL = "https://t.me/rika_updats"
+SUPPORT_GROUP = "https://t.me/+U3OxBbEaNrhhZGM9"
 
 NSFW_WORDS = [
     "chutiya", "madarchod", "bhosdi", "bhosdiwala", "chutka", "kaminey", "haraamikhor",
