@@ -1,7 +1,9 @@
 import os
 import hashlib
 
-BOT_TOKEN = "8664546839:AAE1G87GaLz59qZoHnWl1Qa1UJbTD7MhJ1E"
+BOT_TOKEN = "8628786630:AAENaSvViSaK_WinoYxHaXmsR5lvcFzdLWk"
+API_ID = 38081166
+API_HASH = "f608a6dcf2b1d4761c53ff29d00c5bbf"
 
 try:
     INSTANCE_ID = hashlib.sha256(BOT_TOKEN.encode()).hexdigest()
