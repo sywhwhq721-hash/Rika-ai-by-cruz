@@ -143,8 +143,16 @@ async def main():
     register_handlers(dp)
     asyncio.create_task(auto_clear_cache())
     logging.info("🌸 NYRA Bot is starting up~ 💕 (Powered by Groq)")
-    await dp.start_polling(bot)
+    try:
+        await dp.start_polling(bot)
+    finally:
+        await bot.session.close()
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logging.info("Bot stopped by user.")
+    except Exception as e:
+        logging.error(f"Fatal error: {e}")
