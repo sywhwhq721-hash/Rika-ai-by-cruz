@@ -1,1 +1,1 @@
-worker: python NYRA/main.py
+worker: python -u RIKA/main.py
