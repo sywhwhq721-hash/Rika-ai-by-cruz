@@ -33,6 +33,10 @@ SUDO_USERS = [
     8705127026,  # Owner
 ]
 
+# Ban Users Configuration
+BANNED_USERS = []
+BANNED_CHATS = []
+
 def is_sudo(user_id):
     """Check if user has sudo/admin privileges"""
     return user_id in SUDO_USERS or user_id == OWNER_ID
@@ -46,6 +50,50 @@ def remove_sudo_user(user_id):
     """Remove a user from sudo list"""
     if user_id in SUDO_USERS and user_id != OWNER_ID:
         SUDO_USERS.remove(user_id)
+
+def is_banned_user(user_id):
+    """Check if user is banned"""
+    return user_id in BANNED_USERS
+
+def is_banned_chat(chat_id):
+    """Check if chat is banned"""
+    return chat_id in BANNED_CHATS
+
+def ban_user(user_id):
+    """Ban a user"""
+    if user_id not in BANNED_USERS and user_id != OWNER_ID:
+        BANNED_USERS.append(user_id)
+        return True
+    return False
+
+def ban_chat(chat_id):
+    """Ban a chat"""
+    if chat_id not in BANNED_CHATS:
+        BANNED_CHATS.append(chat_id)
+        return True
+    return False
+
+def unban_user(user_id):
+    """Unban a user"""
+    if user_id in BANNED_USERS:
+        BANNED_USERS.remove(user_id)
+        return True
+    return False
+
+def unban_chat(chat_id):
+    """Unban a chat"""
+    if chat_id in BANNED_CHATS:
+        BANNED_CHATS.remove(chat_id)
+        return True
+    return False
+
+def get_all_banned_users():
+    """Get all banned users list"""
+    return BANNED_USERS.copy()
+
+def get_all_banned_chats():
+    """Get all banned chats list"""
+    return BANNED_CHATS.copy()
 
 NSFW_WORDS = [
     "chutiya", "madarchod", "bhosdi", "bhosdiwala", "chutka", "kaminey", "haraamikhor",
