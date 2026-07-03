@@ -28,6 +28,25 @@ OWNER_ID = 8705127026
 UPDATE_CHANNEL = "https://t.me/rika_updats"
 SUPPORT_GROUP = "https://t.me/+U3OxBbEaNrhhZGM9"
 
+# Sudo Users Configuration
+SUDO_USERS = [
+    8705127026,  # Owner
+]
+
+def is_sudo(user_id):
+    """Check if user has sudo/admin privileges"""
+    return user_id in SUDO_USERS or user_id == OWNER_ID
+
+def add_sudo_user(user_id):
+    """Add a user to sudo list"""
+    if user_id not in SUDO_USERS:
+        SUDO_USERS.append(user_id)
+
+def remove_sudo_user(user_id):
+    """Remove a user from sudo list"""
+    if user_id in SUDO_USERS and user_id != OWNER_ID:
+        SUDO_USERS.remove(user_id)
+
 NSFW_WORDS = [
     "chutiya", "madarchod", "bhosdi", "bhosdiwala", "chutka", "kaminey", "haraamikhor",
     "bhosdike", "bhosdika", "anal", "arse", "ass", "asshole", "bastard", "bitch", "blowjob",
